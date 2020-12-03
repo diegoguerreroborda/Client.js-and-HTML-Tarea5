@@ -1,3 +1,4 @@
+/*
 getList = function(){
     fetch('http://localhost:3000/third_service')
     .then(response => response.json())
@@ -42,4 +43,29 @@ getDataUser = function(){
         document.getElementById("txtSurname").innerHTML = data.surname
         document.getElementById("txtAge").innerHTML = data.age
     }); 
+}
+*/
+getList2 = function(){
+    fetch('http://localhost:3001/info_servers')
+    .then(response => response.json())
+    .then( 
+        data => {
+            console.log(data)
+            document.getElementById("c_time1").innerHTML = data[0];
+            document.getElementById("c_time2").innerHTML = data[0];
+            document.getElementById("c_time3").innerHTML = data[0];
+            document.getElementById("c_port1").innerHTML = data[1];
+            document.getElementById("c_port2").innerHTML = data[1];
+            document.getElementById("c_port3").innerHTML = data[1];
+            document.getElementById("c_con1").innerHTML = data[2];
+            document.getElementById("c_con2").innerHTML = data[3];
+            document.getElementById("c_con3").innerHTML = data[4];
+        }
+    );
+}
+
+changeText = function(){
+    if(document.getElementById("c_con1").value == "er"){
+        document.getElementById("c_con1").innerHTML = "Error"
+    }
 }
